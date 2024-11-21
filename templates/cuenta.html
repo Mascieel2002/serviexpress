@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta - ServiExpress</title>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Mi Cuenta</h2>
+        <div class="mb-4">
+            <h4>Nombre del Dueño: Usuario Prueba</h4>
+            <p>Datos del Auto: Marca, Modelo, Año</p>
+        </div>
+        <h4>Servicios Realizados</h4>
+        <ul>
+            <li>Servicio 1</li>
+            <li>Servicio 2</li>
+            <li>Servicio 3</li>
+        </ul>
+        <h4>Presupuestos</h4>
+        <div class="mb-3">
+            <h5>Aprobados</h5>
+            <button class="btn btn-success">Aprobado</button>
+        </div>
+        <div>
+            <h5>Por Aprobar</h5>
+            <button class="btn btn-warning" id="liveAlertBtn">Por Aprobar</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('liveAlertBtn').addEventListener('click', function () {
+            const approve = confirm('¿Desea aprobar el servicio?');
+            if (approve) {
+                window.location.href = 'https://appdepago.com'; // Redirigir a la app de pago
+            } else {
+                this.classList.remove('btn-warning');
+                this.classList.add('btn-danger');
+                this.textContent = 'Negado';
+            }
+        });
+    </script>
+
+    <script src="/static/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

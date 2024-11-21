@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ servicio['nombre'] }} - ServiExpress</title>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h2 class="text-center">{{ servicio['nombre'] }}</h2>
+                <img src="/{{ servicio['imagen'] }}" alt="{{ servicio['nombre'] }}" class="img-fluid my-3">
+                <p class="text-center">Aquí va una descripción detallada del servicio "{{ servicio['nombre'] }}".</p>
+                <div class="text-center">
+                    <button class="btn btn-success">Realizar Presupuesto</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

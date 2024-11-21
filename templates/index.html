@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiExpress</title>
+    <!-- Asegúrate de usar url_for para cargar el archivo CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo ServiExpress" class="navbar-logo">
+                ServiExpress
+            </a>
+            <form class="d-flex mx-auto" role="search">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+            {% if session.get('user') %}
+                <a href="{{ url_for('logout') }}" class="btn btn-outline-danger">Cerrar Sesión</a>
+            {% else %}
+                <a href="{{ url_for('login') }}" class="btn btn-outline-primary">Iniciar Sesión</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <!-- Cuerpo de la Página -->
+    <div class="container my-5">
+        <div class="row">
+            {% for servicio in servicios %}
+            <div class="col-md-4 mb-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ servicio['imagen'] }}" class="card-img-top" alt="{{ servicio['nombre'] }}">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ servicio['nombre'] }}</h5>
+                        <a href="{{ url_for('servicio', id=servicio['id']) }}" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo ServiExpress" class="footer-logo">
+            <p>Teléfono: 123-456-7890 | Instagram: @ServiExpress | Correo: contacto@serviexpress.com</p>
+            <p>
+                <a href="https://goo.gl/maps/ubicacion" target="_blank">
+                    <img src="/static/images/ubicacion.png" alt="Ubicación" style="width: 30px;">
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="/static/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

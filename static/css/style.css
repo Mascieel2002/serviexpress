@@ -1,0 +1,44 @@
+body {
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+    color: black;
+    background-color: white;
+}
+
+.navbar-brand {
+    font-size: 1.5rem; /* Aumenta ligeramente el tamaño del logo */
+}
+
+.card-text {
+    font-size: 1rem; /* Ajusta la fuente de las tarjetas */
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+footer {
+    font-size: 0.9rem; /* Ajusta el tamaño de fuente en el footer */
+}
+
+/* Tamaño pequeño del logo en el navbar */
+.navbar-logo {
+    height: 50px;  /* Tamaño pequeño pero visible */
+    width: auto;   /* Mantiene la proporción de la imagen */
+}
+
+/* Tamaño más grande del logo en el footer */
+.footer-logo {
+    height: 120px; /* Tamaño más grande para el footer */
+    width: auto;   /* Mantiene la proporción de la imagen */
+}
+
+/* Opcional: ajusta el tamaño en pantallas más pequeñas */
+@media (max-width: 768px) {
+    .navbar-logo {
+        height: 40px;  /* Logo más pequeño en pantallas pequeñas */
+    }
+
+    .footer-logo {
+        height: 100px; /* Logo más pequeño en pantallas pequeñas */
+    }
+}
